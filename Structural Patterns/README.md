@@ -48,8 +48,7 @@ int main()
     store.addOrder(chocomomo.get());
 
     store.executeOrders();
-
-    store.executeOrders();
+    
     return 0;
 }
 ```
