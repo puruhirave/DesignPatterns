@@ -25,14 +25,18 @@ Also abstract 'MomoDecorator' created by inheriting from 'Momo' interface, and d
 
 * Driver code for Momo Store
 ```C
- MomoStore store;
+//Decorator driver code
+int main()
+{
+    cout << "*** Decorator Demo (Momos Store) ***" << endl << endl;
+    MomoStore store;
 
     //Veg momo -> Decorated with Shalow Fry
     std::shared_ptr<VegMomo> vegmomo = std::make_shared<VegMomo>("Green vegitables");
     std::shared_ptr<FriedMomo> friedmomo = std::make_shared<FriedMomo>(vegmomo.get());
     store.addOrder(friedmomo.get());
 
-    //NonVeg momo -> Decorated with Shezvan sauce
+    //NonVeg momo -> Decorated with Shezvan saus
     std::shared_ptr<NonVegMomo> nonVegMomo = std::make_shared<NonVegMomo>("Chicken");
     std::shared_ptr<ShezvanMomo> szmomo = std::make_shared<ShezvanMomo>(nonVegMomo.get());
     store.addOrder(szmomo.get());
@@ -44,6 +48,9 @@ Also abstract 'MomoDecorator' created by inheriting from 'Momo' interface, and d
     store.addOrder(chocomomo.get());
 
     store.executeOrders();
+
+return 0;
+}
 ```
 
 ![objects](https://user-images.githubusercontent.com/6056609/43304796-131678c2-9193-11e8-9546-22b2d7fb26c5.png)
