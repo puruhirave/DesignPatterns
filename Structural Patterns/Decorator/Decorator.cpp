@@ -41,19 +41,19 @@ int main()
     MomoStore store;
 
     //Veg momo -> Decorated with Shalow Fry
-    std::shared_ptr<VegMomo> vegmomo = std::make_shared<VegMomo>("Green vegitables");
-    std::shared_ptr<FriedMomo> friedmomo = std::make_shared<FriedMomo>(vegmomo.get());
+    std::unique_ptr<IMomo> vegmomo = std::make_unique<VegMomo>("Green vegitables");
+    std::unique_ptr<IMomo> friedmomo = std::make_unique<FriedMomo>(vegmomo.get());
     store.addOrder(friedmomo.get());
 
     //NonVeg momo -> Decorated with Shezvan saus
-    std::shared_ptr<NonVegMomo> nonVegMomo = std::make_shared<NonVegMomo>("Chicken");
-    std::shared_ptr<ShezvanMomo> szmomo = std::make_shared<ShezvanMomo>(nonVegMomo.get());
+    std::unique_ptr<IMomo> nonVegMomo = std::make_unique<NonVegMomo>("Chicken");
+    std::unique_ptr<IMomo> szmomo = std::make_unique<ShezvanMomo>(nonVegMomo.get());
     store.addOrder(szmomo.get());
 
     //Veg momo -> Decorate with Fry -> Decorated with chocolate
-    std::shared_ptr<VegMomo> vegmomo1 = std::make_shared<VegMomo>("Cryspy items");
-    std::shared_ptr<FriedMomo> friedmomo1 = std::make_shared<FriedMomo>(vegmomo1.get());
-    std::shared_ptr<ChocolateMomo> chocomomo = std::make_shared<ChocolateMomo>(friedmomo1.get());
+    std::unique_ptr<IMomo> vegmomo1 = std::make_unique<VegMomo>("Cryspy items");
+    std::unique_ptr<IMomo> friedmomo1 = std::make_unique<FriedMomo>(vegmomo1.get());
+    std::unique_ptr<IMomo> chocomomo = std::make_unique<ChocolateMomo>(friedmomo1.get());
     store.addOrder(chocomomo.get());
 
     store.executeOrders();
