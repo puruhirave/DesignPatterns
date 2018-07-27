@@ -23,4 +23,27 @@ Also abstract 'MomoDecorator' created by inheriting from 'Momo' interface, and d
 
 * The Decorator pattern is implemented with C++11 code. This code explains how the Momo objects are decorated at runtime without changing there behaviour? Following screenshot shows Veg Momo object decorated with FriedMomo Decorator and ChocolateMomo Decorator.
 
+* Driver code for Momo Store
+```C
+ MomoStore store;
+
+    //Veg momo -> Decorated with Shalow Fry
+    std::shared_ptr<VegMomo> vegmomo = std::make_shared<VegMomo>("Green vegitables");
+    std::shared_ptr<FriedMomo> friedmomo = std::make_shared<FriedMomo>(vegmomo.get());
+    store.addOrder(friedmomo.get());
+
+    //NonVeg momo -> Decorated with Shezvan sauce
+    std::shared_ptr<NonVegMomo> nonVegMomo = std::make_shared<NonVegMomo>("Chicken");
+    std::shared_ptr<ShezvanMomo> szmomo = std::make_shared<ShezvanMomo>(nonVegMomo.get());
+    store.addOrder(szmomo.get());
+
+    //Veg momo -> Decorate with Fry -> Decorated with chocolate
+    std::shared_ptr<VegMomo> vegmomo1 = std::make_shared<VegMomo>("Cryspy items");
+    std::shared_ptr<FriedMomo> friedmomo1 = std::make_shared<FriedMomo>(vegmomo1.get());
+    std::shared_ptr<ChocolateMomo> chocomomo = std::make_shared<ChocolateMomo>(friedmomo1.get());
+    store.addOrder(chocomomo.get());
+
+    store.executeOrders();
+```
+
 ![objects](https://user-images.githubusercontent.com/6056609/43304796-131678c2-9193-11e8-9546-22b2d7fb26c5.png)
