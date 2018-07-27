@@ -21,7 +21,7 @@ Also abstract 'MomoDecorator' created by inheriting from 'Momo' interface, and d
 
 ![decoratorpattern - copy](https://user-images.githubusercontent.com/6056609/43304294-2b0a2f48-9191-11e8-90dc-e00371a7578a.png)
 
-* The Decorator pattern is implemented with C++11 code. This code explains how the Momo objects are decorated at runtime without changing there behaviour? Following screenshot shows Veg Momo object decorated with FriedMomo Decorator and ChocolateMomo Decorator.
+* The Decorator pattern is implemented with C++11 features. This code explains how the Momo objects are decorated at runtime without changing there behaviour? Following driver code creates VegMomo, NonVeg Momos and decorates these objects.
 
 * Driver code for Momo Store
 ```C
@@ -55,5 +55,7 @@ int main()
 
 Link to source code:
 https://github.com/puruhirave/DesignPatterns/tree/master/Structural%20Patterns/Decorator
+
+ Following screenshot shows last scenario of Veg Momo object decorated dynamically with FriedMomo Decorator and ChocolateMomo Decorator.
 
 ![objects](https://user-images.githubusercontent.com/6056609/43304796-131678c2-9193-11e8-9546-22b2d7fb26c5.png)
