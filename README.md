@@ -1,5 +1,5 @@
 # DesignPatterns
-Design Patterns with various real life scenarios
+Design Patterns with various real life scenarios.
 
 
 ## Decorator
