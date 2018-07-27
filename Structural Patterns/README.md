@@ -17,7 +17,7 @@ its	base	class.
 Decorator pattern usecase explained with one real life example as Momos store with different types of Momo Decorators.
 For examples, abstract 'Momos' class used to create concreate Momos like Veg Momo and Non-Veg Momos.
 
-The abstract Decorator class 'MomoDecorator' created by inheriting from 'Momo' interface and different Decorator created like 'Fried Momo', 'Shezvan Momo', 'Chocolate Momo' etc.
+The abstract Decorator class 'MomoDecorator' created by inheriting from 'Momo' interface and different concrete Decorators created like 'Fried Momo', 'Shezvan Momo', 'Chocolate Momo' etc.
 
 ![momodecorator](https://user-images.githubusercontent.com/6056609/43311583-7dbfb246-91a8-11e8-8899-0c486a1c3a80.png)
 
