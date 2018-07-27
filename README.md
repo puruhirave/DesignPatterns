@@ -45,6 +45,9 @@ int main()
     std::unique_ptr<VegMomo> vegmomo1 = std::make_unique<VegMomo>("Cryspy items");
     std::unique_ptr<FriedMomo> friedmomo1 = std::make_unique<FriedMomo>(vegmomo1.get());
     std::unique_ptr<ChocolateMomo> chocomomo = std::make_unique<ChocolateMomo>(friedmomo1.get());
+    store.addOrder(chocomomo.get());
+
+    store.executeOrders();
 
     store.executeOrders();
     return 0;
