@@ -1,5 +1,6 @@
 # Structural Patterns
-Structural design patterns explores how classes and objects can be composed, to form larger structures.
+Structural design patterns focus on how classes and objects can be composed, to form larger structures.
+These patterns simplifies the structure by identifying the relationships.
 
 ## Decorator
 * Category: Structural
