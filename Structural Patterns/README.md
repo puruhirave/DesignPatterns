@@ -1,6 +1,4 @@
-# DesignPatterns
-Design Patterns with various real life scenarios.
-
+# Structural Patterns
 
 ## Decorator
 * Category: Structural
