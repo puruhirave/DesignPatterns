@@ -5,7 +5,7 @@ These patterns simplifies the structure by identifying the relationships.
 ## Decorator
 * Category: Structural
 * Intent:
-  Inject additional responsibilities	to	an existing	object dynamically. Decorators	
+   Inject additional responsibilities	to	an existing	object dynamically. Decorators	
   provide	a	flexible	alternative	to	subclassing.
 	Decorator	has	both	an	is‐a	and	a	has‐a	relationship	to	
 its	base	class.
@@ -19,7 +19,7 @@ For examples, abstract 'Momos' class used to create concreate Momos like Veg Mom
 
 Also abstract 'MomoDecorator' created by inheriting from 'Momo' interface, and different Decorator created like 'Fried Momo', 'Shezvan Momo', 'Chocolate Momo' etc.
 
-![decoratorpattern - copy](https://user-images.githubusercontent.com/6056609/43304294-2b0a2f48-9191-11e8-90dc-e00371a7578a.png)
+![momodecorator](https://user-images.githubusercontent.com/6056609/43311583-7dbfb246-91a8-11e8-8899-0c486a1c3a80.png)
 
 * The Decorator pattern is implemented with C++11 features. This code explains how the Momo objects are decorated at runtime without changing there behaviour? Following driver code creates VegMomo, NonVeg Momos and decorates these objects.
 
