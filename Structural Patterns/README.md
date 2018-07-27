@@ -1,4 +1,5 @@
 # Structural Patterns
+Structural design patterns explores how classes and objects can be composed, to form larger structures.
 
 ## Decorator
 * Category: Structural
