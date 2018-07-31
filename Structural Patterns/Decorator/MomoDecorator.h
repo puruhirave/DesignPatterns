@@ -17,6 +17,7 @@ public:
     IMomo* get() { return mDecorator; }
 protected:
     MomoDecorator(const MomoDecorator& dec) : mDecorator(dec.mDecorator) {}
+private:
     IMomo* mDecorator;
 };
 
