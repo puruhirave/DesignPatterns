@@ -112,4 +112,4 @@ https://github.com/puruhirave/DesignPatterns/tree/master/Structural%20Patterns/D
 
  Following screenshot shows last scenario of Veg Momo object decorated dynamically with FriedMomo Decorator and ChocolateMomo Decorator.
 
-![objects](https://user-images.githubusercontent.com/6056609/43304796-131678c2-9193-11e8-9546-22b2d7fb26c5.png)
+![objects](https://user-images.githubusercontent.com/6056609/43454594-2e77ebdc-94db-11e8-91f4-eaa29db32f0c.png)
