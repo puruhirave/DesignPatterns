@@ -37,6 +37,18 @@ public:
 The Decorator 'is-a' Momo object and also 'has-a' pointer to the concreate Momo object as 'mDecorator'. Also it decorates and adds additional decoration cost by its own and calls the concrete Momo objects operation from 'operator()'.
 
 ```C
+class MomoDecorator : public IMomo {
+public:
+    MomoDecorator(IMomo* m) : mDecorator(m) {}
+    virtual void operator()() = 0;
+    virtual void addCost(int addCost) = 0;
+    IMomo* get() { return mDecorator; }
+protected:
+    MomoDecorator(const MomoDecorator& dec) : mDecorator(dec.mDecorator) {}
+private:
+    IMomo* mDecorator;
+};
+
 class ShezvanMomo : public MomoDecorator {
 public:
     ShezvanMomo(IMomo* m) : MomoDecorator(m) {}
