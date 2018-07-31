@@ -87,10 +87,10 @@ int main()
 First thing is that raw pointer is not used because not just to handle automatic life time of Momo Objects,
 but otherwise it would require to call delete operator on Momo object in both driver code and MomoStore code also. 
 
-Lets take real life scenario, where Momo manufactures has sold the Momo's to Seller/Distributor.
+Lets take real life scenario, where Momo's manufacture has sold the Momo's to Seller/Distributor.
 Now the ownership is changed from Manufacturer to Seller. Manufacturer no more requires ownership of these objects. 
 So shared pointer not required. 
-And the Decorator is new owner and he can also pass its ownershipt to another Decorator.
+And the Decorator is new owner and he can also pass its ownership to another Decorator.
 
 See the last scenario of ChocolateMomo.
 ```
