@@ -19,7 +19,7 @@ For examples, abstract 'Momos' class used to create concreate Momos like Veg Mom
 
 The abstract Decorator class 'MomoDecorator' created by inheriting from 'Momo' interface and different concrete Decorators created like 'Fried Momo', 'Shezvan Momo', 'Chocolate Momo' etc.
 
-![momodecorator](https://user-images.githubusercontent.com/6056609/43311583-7dbfb246-91a8-11e8-8899-0c486a1c3a80.png)
+![momodecorator](https://user-images.githubusercontent.com/6056609/43451378-70210d60-94d2-11e8-8996-45d032983361.png)
 
 * The Decorator pattern is implemented with C++11 features. This code explains how the Momo objects are decorated at runtime without changing there behaviour? Following driver code creates VegMomo, NonVeg Momos and decorates these objects.
 
