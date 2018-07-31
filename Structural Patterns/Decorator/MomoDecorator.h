@@ -55,7 +55,7 @@ public:
     ChocolateMomo(IMomo* m) : MomoDecorator(m) {}
     ~ChocolateMomo() {}
     void operator()() {
-        cout << " Decorated with Chocolate ";
+        cout << " Decorated with Chocolate sause ";
         addCost(20);
         (*get())();
     }
