@@ -21,9 +21,39 @@ The abstract Decorator class 'MomoDecorator' created by inheriting from 'Momo' i
 
 ![momodecorator](https://user-images.githubusercontent.com/6056609/43451378-70210d60-94d2-11e8-8996-45d032983361.png)
 
-* The Decorator pattern is implemented with C++11 features. This code explains how the Momo objects are decorated at runtime without changing there behaviour? Following driver code creates VegMomo, NonVeg Momos and decorates these objects.
+* The Decorator pattern is implemented with C++11 features. This code explains how the Momo objects are decorated at runtime without changing there behaviour? 
+* The IMomo abstract class provided with 'operator()' pure virtual method as operation to be executed by concrete Momo object. 
+```C
+class IMomo{
+public:
+    IMomo(){};
+    virtual ~IMomo(){};
+    virtual void operator()() = 0;
+    ....
+    ...
+    }
+```
 
-* Driver code for Momo Store
+The Decorator 'is-a' Momo object and also 'has-a' pointer to the concreate Momo object as 'mDecorator'. Also it decorates and adds additional decoration cost by its own and calls the concrete Momo objects operation from 'operator()'.
+
+```C
+class ShezvanMomo : public MomoDecorator {
+public:
+    ShezvanMomo(IMomo* m) : MomoDecorator(m) {}
+    ~ShezvanMomo() {}
+    void operator()() {
+        cout << " Decorated with special Sezvan sause and soup ";
+        addCost(10);
+        (*get())();
+    }
+    void addCost(int cost) {
+        get()->addCost(cost);
+    };
+};
+```
+
+
+* Following driver code creates VegMomo, NonVeg Momos and decorates these objects.
 ```C
 //Decorator driver code
 int main()
@@ -51,6 +81,18 @@ int main()
     
     return 0;
 }
+```
+* Why Unique pointer used while creating Momo objects and decorators? Why not shared pointer?
+```C
+First thing is that raw pointer is not used because not just to handle automatic life time 
+but otherwise it would require to call delete operator on Momo object in both driver code and MomoStore code also. 
+
+Lets take real life scenario, where Momo manufactures has sold the Momo's to Seller/Distributor.
+So now the ownership is changed to Seller. Manufacturer no more requires ownership of these objects now. 
+So shared pointer not required. 
+And now Decorator is the new owner and he can also pass its ownershipt to another Decorator also.
+
+See the last scenario of ChocolateMomo.
 ```
 
 Link to source code:
