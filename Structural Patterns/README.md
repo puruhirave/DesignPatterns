@@ -101,7 +101,7 @@ but otherwise it would require to call delete operator on Momo object in both dr
 Lets take real life scenario, where Momo's manufacture has sold the Momo's to Seller/Distributor.
 Now the ownership is changed from Manufacturer to Seller. Manufacturer no more requires ownership of these objects. 
 So shared pointer not required. 
-And the Decorator is new owner and he can also pass its ownership to another Decorator.
+And the Seller as a Decorator can also pass its ownership to another Decorator.
 
 See the last scenario of ChocolateMomo.
 ```
