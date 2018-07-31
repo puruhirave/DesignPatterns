@@ -39,27 +39,26 @@ The Decorator 'is-a' Momo object and also 'has-a' pointer to the concreate Momo 
 ```C
 class MomoDecorator : public IMomo {
 public:
-    MomoDecorator(IMomo* m) : mDecorator(m) {}
+    MomoDecorator(std::unique_ptr<IMomo> m) : mDecorator(std::move(m)) {}
     virtual void operator()() = 0;
     virtual void addCost(int addCost) = 0;
-    IMomo* get() { return mDecorator; }
+    IMomo* get() { return mDecorator->get(); }
 protected:
-    MomoDecorator(const MomoDecorator& dec) : mDecorator(dec.mDecorator) {}
-private:
-    IMomo* mDecorator;
+    MomoDecorator(const MomoDecorator& dec) : mDecorator(dec.mDecorator->get()) {}
+    std::unique_ptr<IMomo> mDecorator;
 };
 
 class ShezvanMomo : public MomoDecorator {
 public:
-    ShezvanMomo(IMomo* m) : MomoDecorator(m) {}
+    ShezvanMomo(std::unique_ptr<IMomo> m) : MomoDecorator(std::move(m)) {}
     ~ShezvanMomo() {}
     void operator()() {
         cout << " Decorated with special Sezvan sause and soup ";
         addCost(10);
         (*get())();
     }
-    void addCost(int cost) {
-        get()->addCost(cost);
+    void addCost(int cost) { 
+        get()->addCost(cost); 
     };
 };
 ```
@@ -75,18 +74,18 @@ int main()
 
     //Veg momo -> Decorated with Shalow Fry
     std::unique_ptr<IMomo> vegmomo = std::make_unique<VegMomo>("Green vegitables");
-    std::unique_ptr<IMomo> friedmomo = std::make_unique<FriedMomo>(vegmomo.get());
+    std::unique_ptr<IMomo> friedmomo = std::make_unique<FriedMomo>(std::move(vegmomo));
     store.addOrder(friedmomo.get());
 
     //NonVeg momo -> Decorated with Shezvan saus
     std::unique_ptr<IMomo> nonVegMomo = std::make_unique<NonVegMomo>("Chicken");
-    std::unique_ptr<IMomo> szmomo = std::make_unique<ShezvanMomo>(nonVegMomo.get());
+    std::unique_ptr<IMomo> szmomo = std::make_unique<ShezvanMomo>(std::move(nonVegMomo));
     store.addOrder(szmomo.get());
 
     //Veg momo -> Decorate with Fry -> Decorated with chocolate
     std::unique_ptr<IMomo> vegmomo1 = std::make_unique<VegMomo>("Chocolate Caramel");
-    std::unique_ptr<IMomo> friedmomo1 = std::make_unique<FriedMomo>(vegmomo1.get());
-    std::unique_ptr<IMomo> chocomomo = std::make_unique<ChocolateMomo>(friedmomo1.get());
+    std::unique_ptr<IMomo> friedmomo1 = std::make_unique<FriedMomo>(std::move(vegmomo1));
+    std::unique_ptr<IMomo> chocomomo = std::make_unique<ChocolateMomo>(std::move(friedmomo1));
     store.addOrder(chocomomo.get());
 
     store.executeOrders();
