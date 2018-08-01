@@ -34,7 +34,7 @@ public:
     }
 ```
 
-The Decorator 'is-a' Momo object and also 'has-a' pointer to the concreate Momo object as 'mDecorator'. Also it decorates and adds additional decoration cost by its own and calls the concrete Momo objects operation from 'operator()'.
+The Decorator 'is-a' Momo object and also 'has-a' pointer to the concreate Momo object as 'mDecorator'. Also it decorates and adds  decoration cost by its own and calls the concrete Momo objects operation from 'operator()'.
 
 ```C
 class MomoDecorator : public IMomo {
