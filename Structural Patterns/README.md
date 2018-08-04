@@ -75,18 +75,18 @@ int main()
     //Veg momo -> Decorated with Shalow Fry
     std::unique_ptr<IMomo> vegmomo = std::make_unique<VegMomo>("Green vegitables");
     std::unique_ptr<IMomo> friedmomo = std::make_unique<FriedMomo>(std::move(vegmomo));
-    store.addOrder(friedmomo.get());
+    store.addOrder(std::move(friedmomo));
 
     //NonVeg momo -> Decorated with Shezvan saus
     std::unique_ptr<IMomo> nonVegMomo = std::make_unique<NonVegMomo>("Chicken");
     std::unique_ptr<IMomo> szmomo = std::make_unique<ShezvanMomo>(std::move(nonVegMomo));
-    store.addOrder(szmomo.get());
+    store.addOrder(std::move(szmomo));
 
     //Veg momo -> Decorate with Fry -> Decorated with chocolate
     std::unique_ptr<IMomo> vegmomo1 = std::make_unique<VegMomo>("Chocolate Caramel");
     std::unique_ptr<IMomo> friedmomo1 = std::make_unique<FriedMomo>(std::move(vegmomo1));
     std::unique_ptr<IMomo> chocomomo = std::make_unique<ChocolateMomo>(std::move(friedmomo1));
-    store.addOrder(chocomomo.get());
+    store.addOrder(std::move(chocomomo));
 
     store.executeOrders();
     
