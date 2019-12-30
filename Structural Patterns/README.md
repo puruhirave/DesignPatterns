@@ -4,7 +4,7 @@ These patterns simplifies the structure by identifying the relationships.
 #### * Adapter
 #### * Bridge
 #### * Composite
-#### * Decorator
+#### * [Decorator](https://github.com/puruhirave/DesignPatterns/blob/master/Structural%20Patterns/Decorator.md)
 #### * Facade
 #### * Flyweight
 #### * Proxy
