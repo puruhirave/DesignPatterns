@@ -1,6 +1,6 @@
 # Behaviral Patterns
 
-### Command
-### Iterator
-### Observer
-### State
+#### * Command
+#### * Iterator
+#### * Observer
+#### * State
