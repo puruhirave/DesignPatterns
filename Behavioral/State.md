@@ -30,6 +30,11 @@ The Printer processes Print request with different events like PrintRequest, Pri
 Printer State Machine classes and its source code described below,
 * **PrinterManager:** The PrinterManager creates PrinterStateMachine object. It receives client request and posts corrosponding events to PrinterStateMachine instance.
 * **PrinterStateMachine:** This class acts as Context object to handle printer events. It delegates to PrinterState object to handle state-specific behaviour. This class implements _HandleEvent(PrinterEvent evt)_ method called by client to handle printer event.
+
+To handle State transition events,
+
+
+ 
 * **PrinterState:** The PrinterState is abstract class to handle Printer states. Following derived States implements its PrinterState functionality.\
 _PrinterOffState_,
 _PrinterOperationState_,
@@ -39,4 +44,4 @@ _PrinterErrorState_
 Each state implements _StateTransition(Context*)_ method which is called by PrinterStateMachine during HandleEvent() to handle State transition. It calls the Callback method _ProcessStateEvent(Context*, PrinetEvent evt)_ to process registered event handler and chages current state depending on event.
 
 * Execution view of PrinterStateMachine demo
-
+![ExecuteStateMach](https://user-images.githubusercontent.com/6056609/71624040-891c9880-2c06-11ea-9e6f-bed5d405aea3.png)
