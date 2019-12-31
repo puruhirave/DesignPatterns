@@ -55,6 +55,8 @@ _PrinterErrorState_
 
 Each state implements _StateTransition(Context*)_ method which is called by PrinterStateMachine during HandleEvent() to handle State transition. It calls the Callback method _ProcessStateEvent(Context*, PrinetEvent evt)_ to process registered event handler and chages current state depending on event.
 
+* This State machine design is flexible enough to add new State and corrosponding events without modifying current State and with minimal code changes. All States are decoupled with each other to handle state behavior independantly.
+
 * Execution view of PrinterStateMachine demo
 ![ExecuteStateMach](https://user-images.githubusercontent.com/6056609/71624040-891c9880-2c06-11ea-9e6f-bed5d405aea3.png)
 
