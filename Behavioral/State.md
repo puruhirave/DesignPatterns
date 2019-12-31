@@ -31,10 +31,22 @@ Printer State Machine classes and its source code described below,
 * **PrinterManager:** The PrinterManager creates PrinterStateMachine object. It receives client request and posts corrosponding events to PrinterStateMachine instance.
 * **PrinterStateMachine:** This class acts as Context object to handle printer events. It delegates to PrinterState object to handle state-specific behaviour. This class implements _HandleEvent(PrinterEvent evt)_ method called by client to handle printer event.
 
-To handle State transition events,
+To handle State transition events it create 2 different Maps,
+```C++
+//Keeps State event transition data.
+struct StateTransitionEvtData
+{
+	StateEvent    event_handler;
+	PRINTER_STATE next_state;
+};
 
+//Map of PrinterEvent to StateTransitionEventData
+typedef map<PrinterEvent, StateTransitionEvtData> EventTransitionMap;
+//Map of Printer event to EventTransitionMap 
+typedef map<shared_ptr<PrinterState>, EventTransitionMap> StateMachineMap;
+StateMachineMap m_stateMachieMap;
+```
 
- 
 * **PrinterState:** The PrinterState is abstract class to handle Printer states. Following derived States implements its PrinterState functionality.\
 _PrinterOffState_,
 _PrinterOperationState_,
