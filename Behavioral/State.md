@@ -20,7 +20,7 @@ The Printer device runs its own state machine with different states. The client 
 * **OFF:** Initially the Printer is in OFF state so the initial state of StateMachine is OFF.
 * **OPERATION:** When Printer is powered on the PowerON event is handled by State Machine to Printer make operational from OFF state to OPERATION state.
 The Printer is operational to receive printer commands like Print Cmd, Firmware Download Cmd.
-The Printer processes Print request with different events like PrintRequest, PrintStarted, PrintComplete events. The current state for Print events is OPERATION itself.
+The Printer processes Print request with different events like PrintRequest, PrintStarted, PrintComplete events. The State transition for all Print events is OPERATION itself.
 * **FW_DOWNLOAD:** During 'OPERATION' state the if Printer receives Firmware Download command, then State Machine delegates to OPERATION state for State transition to FW_DOWNLOAD state. After completing Firmware download successfully, Rest Printer event resume Printer to OPERATION state.
 * **ERROR:** During Print Cmd or Firmware Download Cmd if any error occurs then Printer goes to ERROR state. After Error clear event or FwDownloadError clear event the State resumes to previous State like OPERATION or FW_DOWNLOAD.
 
