@@ -25,7 +25,7 @@ The State Machine processes Print request with different events like PrintReques
 * **ERROR:** During Print Cmd or Firmware Download Cmd if any error occurs then Printer goes to ERROR state. After Error clear event or FwDownloadError clear event the State resumes to previous State like OPERATION or FW_DOWNLOAD.
 
 ## Printer State Machine Design:
-![PrinterStateMachClasses](https://user-images.githubusercontent.com/6056609/71623438-9cc60000-2c02-11ea-91cb-4db9cfe4f698.png)
+![ST](https://user-images.githubusercontent.com/6056609/71655192-c6466f00-2d5b-11ea-998e-54aaef8b72e2.png)
 
 Printer State Machine classes and its source code described below,
 * **PrinterManager:** The PrinterManager creates PrinterStateMachine object. It receives client request and posts corrosponding events to PrinterStateMachine instance.
