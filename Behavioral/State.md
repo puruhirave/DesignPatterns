@@ -42,7 +42,7 @@ struct StateTransitionEvtData
 
 //Map of PrinterEvent to StateTransitionEventData
 typedef map<PrinterEvent, StateTransitionEvtData> EventTransitionMap;
-//Map of Printer event to EventTransitionMap 
+//Map of Printer State Ptr to EventTransitionMap 
 typedef map<shared_ptr<PrinterState>, EventTransitionMap> StateMachineMap;
 StateMachineMap m_stateMachieMap;
 ```
