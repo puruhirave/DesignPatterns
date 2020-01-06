@@ -1,3 +1,9 @@
+/******************************************************************/
+/* File   : PrinterStates.h     			          */
+/* Purpose: PrinterState abstract class declaration and concrete  */
+/*          states declaration derived from PrinterState.         */
+/* Author : Purushottam Hirave(2019)                              */
+/******************************************************************/
 #pragma once
 
 class PrinterStateMachine;
